@@ -11,21 +11,6 @@ Este proyecto contiene una aplicación simple que implementa dos microservicios 
 
 - [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/) instalados en tu máquina.
 
-## Estructura del Proyecto
-
-docker/
-│
-├── product-service/ # Microservicio de Productos
-│ ├── Dockerfile
-│ ├── package.json
-│ └── server.js
-│
-├── cart-service/ # Microservicio de Carrito
-│ ├── Dockerfile
-│ ├── package.json
-│ └── server.js
-│
-└── docker-compose.yml # Orquestador para Docker
 
 ## Instrucciones
 
@@ -53,23 +38,31 @@ Cart Service: http://localhost:3002/cart
 ### Interactuar con los Servicios
 Una vez que los contenedores estén en ejecución, puedes interactuar con ellos utilizando curl o cualquier herramienta similar. Aquí algunos ejemplos:
 
-Obtener los productos: Realiza una solicitud GET al servicio de productos para obtener la lista de productos disponibles.
+- **Obtener los productos:** Realiza una solicitud GET al servicio de productos para obtener la lista de productos disponibles.
 
 ```bash
 curl http://localhost:3001/products
 ```
-Agregar un producto al carrito: Realiza una solicitud POST para agregar un producto al carrito. Por ejemplo, para agregar el producto con ID 1:
+![image](https://github.com/user-attachments/assets/aa1dc91c-9116-4d7f-abd3-1fe6c339b666)
+
+
+- **Agregar un producto al carrito:** Realiza una solicitud POST para agregar un producto al carrito. Por ejemplo, para agregar el producto con ID 1:
 
 ```bash
 curl -X POST http://localhost:3002/add-to-cart/1
 ```
+
+![image](https://github.com/user-attachments/assets/40155758-82ef-4d64-b922-37a5fbf0bfed)
+
 Esto agregará el producto al carrito.
 
-Ver el carrito: Realiza una solicitud GET para ver el carrito y los productos agregados.
+- **Ver el carrito:** Realiza una solicitud GET para ver el carrito y los productos agregados.
 
 ```bash
 curl http://localhost:3002/cart
 ```
+![image](https://github.com/user-attachments/assets/b626403f-f6f7-40e4-981b-97be37239d01)
+
 
 ### Detener los Contenedores
 Cuando ya no necesites los contenedores en ejecución, puedes detenerlos con el siguiente comando:
